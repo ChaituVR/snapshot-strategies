@@ -38,7 +38,7 @@ export default class extends Validation {
   async validate(currentAddress = this.author): Promise<boolean> {
     const requiredStamps = this.params.stamps || [];
     const operator = this.params.operator;
-    if (!operator) throw new Error('Operator is required');
+    if (!operator) throw new Error('Operator is required when selecting required stamps');
 
     const stampsResponse = await fetch(
       GET_PASSPORT_STAMPS_URI + currentAddress,
